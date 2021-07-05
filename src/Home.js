@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getPersons } from './actions/personAction'
+import CreateDelay from './createDelay/CreateDelay'
 
 class Home extends React.Component {
 
