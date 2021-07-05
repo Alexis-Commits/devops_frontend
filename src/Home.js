@@ -9,8 +9,6 @@ class Home extends React.Component {
         this.props.getPersons()
     }
 
-
-
     renderPersons = () => {
         return this.props.persons.persons.map(person => {
             return <div>
@@ -28,14 +26,12 @@ class Home extends React.Component {
 
     render() {
 
-        if (this.props.persons.persons) {
-            return this.renderPersons()
-        }
-
-
         return (
             <div>
-                Loading...
+                <CreateDelay />
+                {this.props.persons.persons ? this.renderPersons() : <div>
+                    Loading...
+                </div>}
             </div>
         )
     }

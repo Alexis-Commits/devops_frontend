@@ -3,6 +3,7 @@ import { Route, Router, Switch } from "react-router-dom"
 import history from "./history"
 import Home from "./Home"
 import { connect } from 'react-redux'
+import CreateDelay from "./createDelay/CreateDelay"
 
 
 /**
@@ -23,6 +24,7 @@ class Root extends React.Component {
                     <div>
                         <Switch>
                             <Route path='/home' exact component={Home} />
+                            <Route path='/create' exact component={CreateDelay} />
                         </Switch>
                     </div>
                 </Router>
