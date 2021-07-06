@@ -1,10 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getPersons } from './actions/personAction'
-import CreateDelay from './createDelay/CreateDelay'
+import CreatePerson from './create/CreatePerson'
 
 class Home extends React.Component {
-
 
     componentDidMount() {
         this.props.getPersons()
@@ -12,7 +11,7 @@ class Home extends React.Component {
 
     renderPersons = () => {
         return this.props.persons.persons.map(person => {
-            return <div>
+            return <div style={{ padding: 20 }}>
                 <h2>
                     {person.name}
                 </h2>
@@ -29,10 +28,16 @@ class Home extends React.Component {
 
         return (
             <div>
-                <CreateDelay />
-                {this.props.persons.persons ? this.renderPersons() : <div>
-                    Loading...
-                </div>}
+                <CreatePerson />
+                {this.props.persons.persons ?
+                    <div>
+                        Persons:
+                        {this.renderPersons()}
+                    </div>
+                    :
+                    <div>
+                        Loading...
+                    </div>}
             </div>
         )
     }

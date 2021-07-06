@@ -1,10 +1,9 @@
 import React from "react"
-import { Route, Router, Switch } from "react-router-dom"
+import { Route, Router, Switch , Redirect } from "react-router-dom"
 import history from "./history"
 import Home from "./Home"
 import { connect } from 'react-redux'
-import CreateDelay from "./createDelay/CreateDelay"
-
+import CreateDelay from "./create/CreatePerson"
 
 /**
  * Root component holds the logged-in App navigation and structure
@@ -24,7 +23,9 @@ class Root extends React.Component {
                     <div>
                         <Switch>
                             <Route path='/home' exact component={Home} />
-                            <Route path='/create' exact component={CreateDelay} />
+                            <Route path='/' exact >
+                                <Redirect to="/home" />
+                            </Route>
                         </Switch>
                     </div>
                 </Router>

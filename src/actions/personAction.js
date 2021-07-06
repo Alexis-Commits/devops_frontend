@@ -19,3 +19,13 @@ export const getPersons = () => dispatch => {
         console.log(error.request)
     })
 }
+
+export const createPerson = (name, lastname, birth_date) => dispatch => {
+
+    api.post('/persons/', { name, lastname, birth_date }, { headers: authHeader() }).then(response => {
+        console.log(response.request)
+
+    }).catch(error => {
+        console.log(error.request)
+    })
+}

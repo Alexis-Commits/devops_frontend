@@ -8,14 +8,12 @@ class App extends React.Component {
 
     render() {
 
-
-
         return (
             <Router history={history}>
                 <div>
                     <Switch> 
                         <Route path='/login' exact component={LoginScreen} />
-                        <Route path='/home' exact component={Root} />                        
+                        <Route path='/*' exact component={Root} />                        
                     </Switch>
                 </div>
             </Router>
